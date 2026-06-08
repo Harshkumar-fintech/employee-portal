@@ -1,0 +1,21 @@
+name: employee workflow
+
+on: 
+ push: 
+  branches: [main]
+
+jobs:
+  bulid-employee-portal:
+   runs-on: ubuntu-latest
+
+   steps:
+     - uses: actions/checkout@v6.0.3
+     - name: Setup Node JS 
+       uses: actions/setup-node@v6.4.0
+       with:
+         node-version: 22.x
+     - name: install dependencies
+       run: npm install
+     - name: bulid employee workflow
+       run: npm run bulid
+  
